@@ -73,6 +73,7 @@ export class Column extends Component { // eslint-disable-line react/require-ren
 export class Sheet extends Component { // eslint-disable-line react/require-render-return
   static propTypes = {
     name: PropTypes.string.isRequired,
+    columsWidths: PropTypes.array,
     data: PropTypes.oneOfType([
       PropTypes.array,
       PropTypes.func
@@ -139,6 +140,9 @@ export class Workbook extends Component {
 
     React.Children.forEach(this.props.children, sheet => {
       wb.Sheets[sheet.props.name] = sheet_from_array_of_arrays(this.createSheetData(sheet))
+      if (sheet.props.columsWidths) {
+        wb.Sheets[sheet.props.name]['!cols'] = sheet.props.columsWidths
+      }
     })
 
     const wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'})
