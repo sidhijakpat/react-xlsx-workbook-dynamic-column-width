@@ -1,18 +1,18 @@
 {
-  "name": "react-xlsx-workbook",
-  "version": "0.0.5",
-  "description": "An downloadable excel workbook react component from ClearC2 and republish by devarchi33",
+  "name": "react-xlsx-workbook-dynamic-column-width",
+  "version": "0.0.2",
+  "description": "An downloadable excel workbook react component from ClearC2, republish by devarchi33 and republished again by sidhijakpat",
   "main": "lib/index.js",
   "scripts": {
     "start": "cd example && webpack-dev-server --inline --content-base dist --history-api-fallback --port 8082",
     "compile": "babel -d lib/ src/",
     "prepublish": "yarn run compile"
   },
-  "author": "devarchi33",
+  "author": "sidhijakpat",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devarchi33/react-excel-workbook"
+    "url": "https://github.com/sidhijakpat/react-xlsx-workbook-dynamic-column-width"
   },
   "keywords": [
     "react-component",
@@ -45,5 +45,5 @@
     "react-dom": "^15.0.0",
     "prop-types": "^15.0.0"
   },
-  "homepage": "https://github.com/devarchi33/react-excel-workbook"
+  "homepage": "https://github.com/sidhijakpat/react-xlsx-workbook-dynamic-column-width"
 }
