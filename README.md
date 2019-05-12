@@ -5,6 +5,8 @@ React Excel Workbook is a library for defining downloadable excel workbooks with
 ## Example
 
 ```jsx
+import React from 'react'
+import {render} from 'react-dom'
 import Workbook from 'react-xlsx-workbook-dynamic-column-width'
 
 const data1 = [
@@ -15,7 +17,7 @@ const data1 = [
   },
   {
     foo: 'abc',
-    bar: 'dfg',
+    bar: 'BCAC24VO11NAONA',
     baz: 'hij'
   },
   {
@@ -38,18 +40,26 @@ const data2 = [
   }
 ]
 
+const columnWidths = [
+      { wch: 10 },
+      { wch: 20 },
+      { wch: 10 }
+    ]
+
 const example = (
-  <div className="row text-center" style={{marginTop: '100px'}}>
-    <Workbook filename="example.xlsx" element={<button className="btn btn-lg btn-primary">Try me!</button>}>
-      <Workbook.Sheet data={data1} name="Sheet A">
-        <Workbook.Column label="Foo" value="foo"/>
-        <Workbook.Column label="Bar" value="bar"/>
-      </Workbook.Sheet>
-      <Workbook.Sheet data={data2} name="Another sheet">
-        <Workbook.Column label="Double aaa" value={row => row.aaa * 2}/>
-        <Workbook.Column label="Cubed ccc " value={row => Math.pow(row.ccc, 3)}/>
-      </Workbook.Sheet>
-    </Workbook>
+  <div className="row" style={{marginTop: '100px'}}>
+    <div className="col-xs-12 text-center">
+      <Workbook filename="example.xlsx" element={<button className="btn btn-lg btn-primary">Try me!</button>}>
+        <Workbook.Sheet data={() => data1} columsWidths={ columnWidths } name="Sheet A">
+          <Workbook.Column label="Foo" value="foo"/>
+          <Workbook.Column label="Bar" value="bar"/>
+        </Workbook.Sheet>
+        <Workbook.Sheet data={data2} name="Another sheet">
+          <Workbook.Column label="Double aaa" value={row => row.aaa * 2}/>
+          <Workbook.Column label="Cubed ccc " value={row => Math.pow(row.ccc, 3)}/>
+        </Workbook.Sheet>
+      </Workbook>
+    </div>
   </div>
 )
 
