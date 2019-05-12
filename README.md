@@ -41,10 +41,10 @@ const data2 = [
 ]
 
 const columnWidths = [
-      { wch: 10 },
-      { wch: 20 },
-      { wch: 10 }
-    ]
+  { wch: 10 },
+  { wch: 20 },
+  { wch: 10 }
+]
 
 const example = (
   <div className="row" style={{marginTop: '100px'}}>
